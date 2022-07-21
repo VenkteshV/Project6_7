@@ -2,6 +2,18 @@ Retrieve reading:
 1) Retrieve, Read, Rerank: Towards End-to-End Multi-Document Reading Comprehension:
 https://arxiv.org/abs/1906.04618?context=cs
 
-
 2) Retrieving and Reading: A Comprehensive Survey on Open-domain Question Answering: 
 https://arxiv.org/abs/2101.00774
+
+
+3) Designing a Minimal Retrieve-and-Read System for Open-Domain Question Answering:
+https://aclanthology.org/2021.naacl-main.468/
+
+4) Poly-encoders: Architectures and Pre-training Strategies for Fast and Accurate Multi-sentence Scoring:
+https://openreview.net/forum?id=SkxgnnNFvH
+
+5) Retrieve, Read, Rerank: Towards End-to-End Multi-Document Reading Comprehension:
+file:///C:/Users/isama/Downloads/Retrieve-Read-Rerank-TowardsEnd-to-End.pdf 
+
+Courses:
+Intro to Deep Learning with PyTorch: https://www.udacity.com/course/deep-learning-pytorch--ud188
