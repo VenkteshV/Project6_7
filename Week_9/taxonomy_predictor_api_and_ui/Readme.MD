@@ -5,7 +5,7 @@ Run pip install -r requirements.txt
 
 To start the service run uvicorn app.main:app.
 
-Download the model from https://drive.google.com/drive/folders/18eEMCmOjgAMvDPmTaZUfDtmYvN34TYQu?usp=sharing
+Download the model from https://drive.google.com/drive/folders/10Wobf4QZsxC4VCwmXWsdvJ2RY09Z-1-S?usp=sharing
 
 For complete list of APIs navigate to http://localhost:8000/docs
 
