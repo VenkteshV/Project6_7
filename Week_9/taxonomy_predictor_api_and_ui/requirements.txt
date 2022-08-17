@@ -4,3 +4,5 @@ typing
 asgiref
 fastapi
 uvicorn
+python-multipart
+pandas

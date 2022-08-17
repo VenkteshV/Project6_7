@@ -33,6 +33,7 @@
           var file_data = $("#inpfile").prop("files")[0];
           var form_data = new FormData(); // Creating 
           form_data.append("file", file_data) // Appending
+          console.log("form_data",form_data)
           if(file_data){
              var b1 = document.getElementById('btn-1');
            b1.style.display = 'none';
@@ -40,7 +41,7 @@
            b2.style.display = 'block';
 
           $.ajax({
-            url: "http://localhost:8000/gettaxonomy", // Upload Script
+            url: "http://localhost:8000/gettaxonomy/batch", // Upload Script
             cache: false,
             contentType: false,
             processData: false,
