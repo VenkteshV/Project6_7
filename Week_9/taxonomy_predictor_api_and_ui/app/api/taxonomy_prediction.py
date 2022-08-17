@@ -1,7 +1,9 @@
 from typing import List
 import csv
+from fastapi.responses import StreamingResponse
+import io
 import codecs
-from fastapi import Header, APIRouter, UploadFile, File, Request
+from fastapi import Header, APIRouter, UploadFile, File, Request, Response
 from app.api.models import Taxonomies
 import pandas as pd
 from app.api.models import LearningContent
@@ -25,4 +27,15 @@ async def get_predictions(payload: Request):
     for ques, learning_content in csvReadContent.values:
         print("ques",ques)
         results.append(recommend_taxonomy(ques))
-    return results
+    results = pd.DataFrame(results)
+    stream = io.StringIO()
+
+    results.to_csv(stream, index = False)
+
+    response = StreamingResponse(iter([stream.getvalue()]),
+                        media_type="text/csv"
+    )
+
+    response.headers["Content-Disposition"] = "attachment; filename=export.csv"
+
+    return response
