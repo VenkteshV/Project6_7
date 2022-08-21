@@ -162,16 +162,21 @@ def recommend_taxonomy(text):
     top_k_labels = list(top_k_labels)
     print("top_k_labels are", test_labels[indices.cpu().numpy()])
 
+
     final_list = []
     results = []
     for label,distance in zip(top_k_labels,distances):
         for formatted_label in labels_with_board:
             if label in formatted_label and len(label.split(">>"))>1:
                 final_list.append((formatted_label,distance))
+    results.append(text)
+    
     for (prediction,distance) in final_list:
+        
         results.append({
             "taxonomy": prediction  ,
             "confidence": distance      })
+    
 
 
     return results
