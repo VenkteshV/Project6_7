@@ -100,7 +100,7 @@
               input1 = element1.value  ;     //Desired Input1
               //input2 = element2.value  ;     //Desired Input2
               var dict = {};
-              content=input1//+' '+input2
+              content=input1//+' '+input2   
               dict['content'] = content;
               $.ajax({
                  type : "post",
@@ -180,6 +180,9 @@
          });
          
       </script>
+
+      
+
       <style >
          @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
          .body {
@@ -292,127 +295,287 @@
         }
 
      
-                </style>
+        </style>
+        
    </head>
-   <body>
+   <body background = "1.jpg">
+    <br />
+    <h3 align="center">
+    <font face="Lato" color = "#0175bf5" size="9">
+        TagRec: The Automated Questions-Learning Taxonomy Predictor
+    </font>
+    </h3>
+    <br />
       <!-- ======= Header ======= -->
       <header id="header" class="fixed-top">
-         <div class="container d-flex align-items-center">
-            <h1 class="logo mr-auto"><a href="{{ url_for('home') }}">TAGREC<h1 style = "font-size:50px ;color: black;display: inline-flex;"></h1></a></h1>
-            <nav class="nav-menu d-none d-lg-block">
-               <ul>
-                  <li><a href="{{ url_for('home') }}">Home</a></li>
-               </ul>
-            </nav>
-            <!-- .nav-menu -->
-            <!-- <a href="{{ url_for('convert') }}" class="get-started-btn">Get Started</a> -->
-         </div>
-      </header>
-      <!-- End Header -->
+        <div class="container d-flex align-items-center">
+
+           
+           <!-- <h2  -->
+
+           <!-- class="logo mr-auto"><a href="{{ url_for('home') }}">
+               TAGREC -->
+
+           <!-- <h1 style = "font-size:50px ;color: black;display: inline-flex;"></h1></a></h1> -->
+           <nav class="nav-menu d-none d-lg-block">
+              <!-- <ul>
+                 <li>
+                   <a href="{{ url_for('home') }}">
+                   Home
+                   </a>
+                 </li>
+              </ul> -->
+           </nav>
+           <!-- .nav-menu -->
+           <!-- <a href="{{ url_for('convert') }}" class="get-started-btn">Get Started</a> -->
+        </div>
+     </header>
+     <!-- End Header -->
+
       <main id="main" data-aos="fade-in">
          <!-- ======= Breadcrumbs ======= -->
          <div style="height: 100%">
           <div class="breadcrumbs">
-            <div class="container">
-               <h2 style = "margin-top: 15px">Taxonomy Predictor</h2>
+            <!-- <div class="container">
+                <h1 align ="left">
+                    <font face ="Lato" color ="017bf5" size="5">
+                        Would you like to upload a file or enter the question?
+                    </font>
+    
+                </h1>
+               <!-- <h2 style = "margin-top: 15px">Taxonomy Predictor</h2> -->
                <!-- <ul>
 
                   <li> Upload a .csv file containing Objective Questions and their corresponding answers.</li>
                   <li> Note: The .csv file should not contain any headers.</li>
                </ul> -->
                <!-- </div> -->
-            </div>
+            <!-- </div> --> 
          </div>
          </div><!-- End Breadcrumbs -->
          <!-- <section > -->
-         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-         <div style = "background-color: #d0dbd4; padding: 1px; padding-bottom: 40px ;align-content: center ;">
-      
-                <div class = "form-class">
-                  <div class="upload-btn-wrapper">
-                     <input id = "inpfile" type="file" name="file" class="input" />
-                     <button class="btn1">Upload a file</button>
-                    
-                  </div>
-                  <div class="upload-btn-wrapper" style="padding-left: 5px">
-                    <!-- <div > -->
-                      <button class = "btn1" id = "btn-1">Submit</button>
-                      <button class = "btn2"  id = "btn-2"
-                      style = 'display:none';
-                      >
-                      <i style = "margin-left: -12px;margin-right: 8px;"class="fa fa-spinner fa-spin"></i>Processing
-                      </button>
 
-                    </div>
-                  </div>
- 
-         </div>
-         <div style="
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          background-color:#e4ebe6 ; 
-          padding-top: 50px;
-          padding-right: 30px;
-          padding-bottom: 50px;
-          padding-left: 20%;
-
-         /*padding:10% 10% 10% 10%; */
-         align-content: center ;   ">
-            <!-- <div style="border
-              -radius: 10px"> -->
-            <h4 style = "margin-bottom: 30px">Enter the question to get the top k Taxonomy Predictions</h4>
-            <div style = ' display: flex; height: 40px;'>
-               <input type="text" name="o_ques" id="o_ques" placeholder="What is matter?" style = 'height: 40px; width: 40%;'/>
-               <input type="text" name="o_ans" id="o_ans" placeholder="TOP 3
-                  " style = 'height: 40px; width: 30%;'/>
-               <button type="submit" id = "b1" style = "
-                  height: 50px;
-                  width: 50px;  
-                  font-size: 2em;
-                  font-weight: bold;
-                  border-radius: 50%;
-                  margin-left: 7px;
-                  background-color: #4bc979;
+            <style>
+                /* Style The Dropdown Button */
+                .dropbtn {
+                  background-color: #4CAF50;
                   color: white;
-                  text-align: center;
-                  cursor: pointer; 
-                  padding-right: 2px"
-                  onclick='readInput()'; >></button>
-
-                <button type="submit"  id = "b2" style = "
+                  padding: 16px;
+                  font-size: 16px;
+                  border: 2px solid black;
+                  cursor: pointer;
+                }
+                
+                /* The container <div> - needed to position the dropdown content */
+                .dropdown {
+                  position: relative;
+                  display: inline-block;
+                }
+                
+                /* Dropdown Content (Hidden by Default) */
+                .dropdown-content {
                   display: none;
-                  height: 50px;
-                  width: 50px;  
-                  font-size: 2em;
-                  font-weight: bold;
-                  border-radius: 50%;
-                  margin-left: 7px;
-                  background-color: #4bc979;
-                  color: white;
-                  text-align: center;
-                  align-items: center;
-                   padding-bottom: 10px;
-                   "> <i class="fa fa-spinner fa-spin"></i></button>
-            </div>
-            <div style = ' display: flex; height: 40px; margin-top:30px'>
-               <input type="text" name="out1" id="out1" placeholder="boom" style = ' display: none ;height: 40px; width:  40%;'/>
-               <input type="text" name="conf1" id="conf1" placeholder="conf
-                  " style = 'display: none ;height: 40px; width: 30%'/>
+                  position: absolute;
+                  background-color: #f9f9f9;
+                  min-width: 160px;
+                  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                  z-index: 1;
+                }
+                
+                /* Links inside the dropdown */
+                .dropdown-content a {
+                  color: black;
+                  padding: 12px 16px;
+                  text-decoration: none;
+                  display: block;
+                }
+                
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {background-color: #f1f1f1}
+                
+                /* Show the dropdown menu on hover */
+                .dropdown:hover .dropdown-content {
+                  display: block;
+                }
+                
+                /* Change the background color of the dropdown button when the dropdown content is shown */
+                .dropdown:hover .dropbtn {
+                  background-color: #3e8e41;
+                }
+                </style>
+                
+                <div id="dropdown" class="dropdown">
+                    <script  type="text/javascript">
+                        function changer(value){
+                        console.log("tab : ", value);
+                        if(value === 'tab1' ){
+                            // document.getElementById("tabcontent").innerHTML = ('<div> hello 1</div>');
+                            document.getElementById("tabcontent").innerHTML = 
+                            `<div id="1st" style="
+                            display: flex;
+                            flex-direction: column;
+                            height: 100%;
+                            background-color:#e4ebe6 ; 
+                            padding-top: 50px;
+                            padding-right: 30px;
+                            padding-bottom: 50px;
+                            padding-left: 20%;
+                            /*padding:10% 10% 10% 10%; */
+                            align-content: center ;   ">
+                                <!-- <div style="border
+                                -radius: 10px"> -->
+                                <h4 style = "margin-bottom: 30px">Enter theWWW question to get the top k Taxonomy Predictions</h4>
+                                <div style = ' display: flex; height: 40px;'>
+                                <input type="text" name="o_ques" id="o_ques" placeholder="What is matter?" style = 'height: 40px; width: 40%;'/>
+                                <input type="text" name="o_ans" id="o_ans" placeholder="TOP 3
+                                    " style = 'height: 40px; width: 30%;'/>
+                                <button type="submit" id = "b1" style = "
+                                    height: 50px;
+                                    width: 50px;  
+                                    font-size: 2em;
+                                    font-weight: bold;
+                                    border-radius: 50%;
+                                    margin-left: 7px;
+                                    background-color: #4bc979;
+                                    color: white;
+                                    text-align: center;
+                                    cursor: pointer; 
+                                    padding-right: 2px"
+                                    onclick='readInput()'; >></button>
 
-            </div>
-            <div style = 'display:flex; '>
-               <input type="text" name="out2" id="out2" placeholder="boom" style = ' display: none ;height: 40px; width: 40%'/>
-               <input type="text" name="conf2" id="conf2" placeholder="conf
-                  " style = 'display: none ;height: 40px; width: 30%;'/>
-            </div>
-            <div style = 'display:flex;'>
-               <input type="text" name="out3" id="out3" placeholder="boom" style = ' display: none ;height: 40px; width: 40%;'/>
-               <input type="text" name="conf3" id="conf3" placeholder="conf
-                  " style = 'display: none ;height: 40px; width: 30%;'/>
-            </div>
-         </div>
-         </div>
+                                    <button type="submit"  id = "b2" style = "
+                                    display: none;
+                                    height: 50px;
+                                    width: 50px;  
+                                    font-size: 2em;
+                                    font-weight: bold;
+                                    border-radius: 50%;
+                                    margin-left: 7px;
+                                    background-color: #4bc979;
+                                    color: white;
+                                    text-align: center;
+                                    align-items: center;
+                                    padding-bottom: 10px;
+                                    "> <i class="fa fa-spinner fa-spin"></i></button>
+                                </div>
+                                <div style = ' display: flex; height: 40px; margin-top:30px'>
+                                <input type="text" name="out1" id="out1" placeholder="boom" style = ' display: none ;height: 40px; width:  40%;'/>
+                                <input type="text" name="conf1" id="conf1" placeholder="conf
+                                    " style = 'display: none ;height: 40px; width: 30%'/>
+
+                                </div>
+                                <div style = 'display:flex; '>
+                                <input type="text" name="out2" id="out2" placeholder="boom" style = ' display: none ;height: 40px; width: 40%'/>
+                                <input type="text" name="conf2" id="conf2" placeholder="conf
+                                    " style = 'display: none ;height: 40px; width: 30%;'/>
+                                </div>
+                                <div style = 'display:flex;'>
+                                <input type="text" name="out3" id="out3" placeholder="boom" style = ' display: none ;height: 40px; width: 40%;'/>
+                                <input type="text" name="conf3" id="conf3" placeholder="conf
+                                    " style = 'display: none ;height: 40px; width: 30%;'/>
+                                </div> `;
+                            
+                
+                        }
+                        else if(value === 'tab2'){
+                            document.getElementById("tabcontent").innerHTML = 
+                            `<div id="2nd" style=" display: flex; flex-direction: column; height: 100%; background-color:#e4ebe6 ; padding-top: 50px; padding-right: 30px; padding-bottom: 50px; padding-left: 20%; align-content: center ;   ">\
+                                        <h4 style = "margin-bottom: 30px">Enter the question to get the top k Taxonomy Predictions</h4>\
+                                        <div style = "display: flex; height: 40px;">\
+                                            <input type="text" name="o_ques" id="o_ques" placeholder="What is matter?" style = "height: 40px; width: 40%;"/>\
+                                            <input type="text" name="o_ans" id="o_ans" placeholder="TOP 3\
+                                            " style = "height: 40px; width: 30%;"/>\
+                                            <button type="submit" id = "b1" style = " height: 50px; width: 50px; font-size: 2em; font-weight: bold; border-radius: 50%; margin-left: 7px; background-color: #4bc979; color: white; text-align: center; cursor: pointer; padding-right: 2px" onclick="readInput()"; >></button>\
+                                            <button type="submit"  id = "b2" style = " display: none; height: 50px; width: 50px; font-size: 2em; font-weight: bold; border-radius: 50%; margin-left: 7px; background-color: #4bc979; color: white; text-align: center; align-items: center; padding-bottom: 10px; "> <i class="fa fa-spinner fa-spin"></i></button>\
+                                        </div>\
+                                        <div style = " display: flex; height: 40px; margin-top:30px">\
+                                            <input type="text" name="out1" id="out1" placeholder="boom" style = " display: none ;height: 40px; width:  40%;"/>\
+                                            <input type="text" name="conf1" id="conf1" placeholder="conf\
+                                            " style = "display: none ;height: 40px; width: 30%"/>\
+
+                                        </div>\
+                                        <div style = "display:flex; ">\
+                                            <input type="text" name="out2" id="out2" placeholder="boom" style = "display: none ;height: 40px; width: 40%"/>\
+                                            <input type="text" name="conf2" id="conf2" placeholder="conf\
+                                            " style = "display: none ;height: 40px; width: 30%;"/>\
+                                        </div>\
+                                        <div style = "display:flex;">\
+                                            <input type="text" name="out3" id="out3" placeholder="boom" style = "display: none ;height: 40px; width: 40%;"/>\
+                                            <input type="text" name="conf3" id="conf3" placeholder="conf\
+                                            " style = "display: none ;height: 40px; width: 30%;"/>\
+                                        </div>\
+                                    </div>`;
+
+                            
+                            
+                                                     
+                        }
+                        else if(value === 'tab3' ){
+                            // document.getElementById("tabcontent").innerHTML = ('<div> hello 3</div>');
+                            document.getElementById("tabcontent").innerHTML = 
+                            '<div id="3rd" style = "background-color: #d0dbd4; padding: 1px; padding-bottom: 40px ;align-content: center;">\
+                                    <div class = "form-class">\
+                                    <div class="upload-btn-wrapper">\
+                                        <input id = "inpfile" type="file" name="file" class="input" />\
+                                        <button class="btn1">Upload a file</button>\
+                                    </div>\
+                                    <div class="upload-btn-wrapper" style="padding-left: 5px">\
+                                        <button class = "btn1" id = "btn-1">Submit</button>\
+                                        <button class = "btn2"  id = "btn-2" style = "display:none" >\
+                                        <i style = "margin-left: -12px;margin-right: 8px;"class="fa fa-spinner fa-spin">\</i>Processing</button>\
+                                        </div>\
+                                    </div>\
+                            </div>';
+                
+                         
+                        }
+                        else {
+                            document.getElementById("1st").style.display = "none";
+                          
+                        }
+                    }
+                     </script>
+
+<select onchange="changer(this.value)">
+                        <option name="Dropdown" value="tab0" >Dropdown</option>
+                        <option name="choice1" value="tab1" >Enter a question and get its taxonomy</option>
+                        <option name="choice2" value="tab2" >Enter a content and get its taxonomy</option>
+                        <option name="choice3" value="tab3" >Upload a bulk file</option>
+                    </select>
+                  
+                </div>
+                <script>
+                    var el = samarth_UI.getElementById('content');
+                    var content;
+                
+                    if  (!user) {
+                        content = '<h1>there is no user</h1>';
+                    }
+                    if  (user) {
+                        content = '<button type="button">Click Me!</button>';
+                    }
+                
+                    el.insertAdjacentHTML('afterbegin', content);
+                
+                </script>
+                
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+       <div id="tabcontent">
+         <!-- 3rd option -->
+         
+       <!-- 1rd option -->
+
+         
+
+     
+    </div>
+       <!-- 2nd option -->
+       
+       
+
+    </div>
+     </main>
+    
          
 
 
@@ -432,4 +595,3 @@
       <!-- Template Main JS File -->
       <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
    </body>
-</html>
