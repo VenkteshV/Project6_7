@@ -14,8 +14,7 @@ taxonomy_predictor = APIRouter()
 @taxonomy_predictor.post('/gettaxonomy',response_model=List[Taxonomies])
 
 async def get_predictions(payload: LearningContent):
-    return recommend_taxonomy(payload.content)
-
+    return recommend_taxonomy(payload.content)[1:]
 
 @taxonomy_predictor.post('/gettaxonomy/batch',response_model=List[List[Taxonomies]])
 async def get_predictions(payload: Request):
@@ -27,7 +26,19 @@ async def get_predictions(payload: Request):
     for ques, learning_content in csvReadContent.values:
         print("ques",ques)
         results.append(recommend_taxonomy(ques))
+
     results = pd.DataFrame(results)
+
+    dic = {"Text": results[0],
+    "Prediction 1": results[1],
+    "Prediction 2": results[2],
+    "Prediction 3": results[3]}
+    results = pd.DataFrame(dic)
+    # results.rename(columns = {0:'Text',1:'Prediction - 1',2:'Prediction - 2', 3:'Prediction - 3'}, inplace = True)
+    # for i in results.columns:
+    #     print(i)
+    # print(results)
+
     stream = io.StringIO()
 
     results.to_csv(stream, index = False)
