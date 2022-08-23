@@ -172,11 +172,14 @@ def recommend_taxonomy(text):
     results.append(text)
     
     for (prediction,distance) in final_list:
+
+        if distance >=0.3:
+            results.append({
+                "taxonomy": prediction  ,
+                "confidence": (0.5*distance+0.5 )     })
+        else:
+            results.append({"taxonomy":"None","confidence":0})
         
-        results.append({
-            "taxonomy": prediction  ,
-            "confidence": 1-distance      })
-    
 
 
     return results
