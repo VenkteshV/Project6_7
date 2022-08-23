@@ -175,7 +175,7 @@ def recommend_taxonomy(text):
         
         results.append({
             "taxonomy": prediction  ,
-            "confidence": distance      })
+            "confidence": 1-distance      })
     
 
 
